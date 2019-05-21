@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="prettierfier-anne_do",
+    name="prettierfier",
     version="1.0.0",
     author="Anne Do",
     author_email="anne.do.designs@gmail.com",
@@ -16,6 +16,7 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: Windows 10",
+        "Operating System :: Microsoft :: Windows",
     ],
+    python_requires='>=3'
 )
