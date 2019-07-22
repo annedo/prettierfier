@@ -5,12 +5,20 @@ Must Manually check formatting of new lines is successful, regardless of
 existing whitespace.
 """
 
-from bs4 import BeautifulSoup
 from pathlib import Path
+
 import xml.dom.minidom as xmldom
+from bs4 import BeautifulSoup
+from css_html_js_minify import html_minify
 
 from _context import prettierfier
 from prettierfier import *
+
+
+def create_min_html():
+    text = Path('html/_raw_html.html').read_text()
+    min_text = html_minify(text)
+    Path('html/_raw_html_min.html').write_text(min_text)
 
 
 def test_prettify_xml():
@@ -62,6 +70,7 @@ def test_prettify_html_min(debug=False):
         prettify_html(str(parser), debug))
 
 
+create_min_html()
 test_prettify_xml()
 test_prettify_html()
 test_prettify_html_min()

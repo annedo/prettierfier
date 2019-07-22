@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='prettierfier',
-    version='1.0.1',
+    version='1.0.2',
     author='Anne Do',
     author_email='anne.do.designs@gmail.com',
     description='Intelligently pretty-print HTML/XML with inline tags.',

@@ -130,8 +130,8 @@ def prettify_html(html_string, debug=False):
                             r' \g<1>')
 
     # Removes whitespace between end of inline tags and beginning of new tag
-    inline_end = RegExSub(r'[\n\s]*(</(strong|a|span)>)[\n\s]*(<)', re.S,
-                          r'\g<1>\g<3>')
+    inline_end = RegExSub(r'[\n\s]*(</(strong|a|span)>)[\n\s]*(?=<)', re.S,
+                          r'\g<1>')
 
     # Adds a space between the ending inline tags and following words
     inline_space = RegExSub(r'[\n\s]*(</(strong|a|span)>)([a-zA-Z0-9])', re.S,
